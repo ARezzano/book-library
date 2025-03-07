@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+const libraryBody = document.querySelector("body");
+
 function Book(title,author,pages,beenRead){
     this.title = title,
     this.author = author,
@@ -20,3 +22,20 @@ function addBookToLibrary(title,author,pages,beenRead){
 
     myLibrary.push(book);
 }
+
+function displayBooks(arr){
+    arr = myLibrary;
+
+    for(let i = 0; i < myLibrary.length; i++){
+       let cardElement = document.createElement("div");
+       let cardText = document.createElement("p");
+
+       cardElement.className = "card";
+
+       cardText.textContent = myLibrary[i].message;
+       cardElement.appendChild(cardText);
+       return libraryBody.appendChild(cardElement);
+    }
+}
+
+//next commit: displayBooks function, cards style

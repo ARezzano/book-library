@@ -1,0 +1,14 @@
+@font-face{
+    font-family: "roboto";
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+}
+
+.card{
+    padding: 20px;
+    background-color: rgb(255, 233, 173);
+    border-radius: 20px;
+    font-family: "roboto";
+    font-size: 24px;
+    max-width: 500px;
+    max-height: 300px;
+}
