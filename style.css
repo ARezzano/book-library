@@ -1,6 +1,14 @@
 @font-face{
     font-family: "roboto";
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap') format("embedded-opentype");
+}
+
+.book-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill,minmax(250px,500px));
+    padding: 15px;
+    gap: 15px;
 }
 
 .card{
