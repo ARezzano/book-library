@@ -3,8 +3,16 @@
     src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap') format("embedded-opentype");
 }
 
+h1{
+    justify-self: center;
+}
+
 .header-div{
     justify-self: center;
+}
+
+.book-form form:first-of-type{
+    display: grid;
 }
 
 .book-container{

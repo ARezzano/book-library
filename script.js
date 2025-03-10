@@ -1,6 +1,8 @@
 const myLibrary = [];
 
-const libraryBody = document.querySelector("body");
+const libraryBody = document.querySelector(".book-container");
+const newBookBtn = document.getElementById("new-book");
+const headerDiv = document.querySelector(".header-div");
 
 function Book(title,author,pages,beenRead){
     this.title = title,
@@ -38,4 +40,59 @@ function displayBooks(arr){
     }
 }
 
-//next commit: displayBooks function, cards style
+newBookBtn.addEventListener("click", () =>{
+    let bookFormDiv = document.createElement("div");
+    bookFormDiv.className = "book-form";
+
+    let formElement = document.createElement("form");
+
+    let bTitleLabel = document.createElement("label");
+    bTitleLabel.htmlFor = "book-title";
+    bTitleLabel.textContent = "Book title";
+    let bTitleInput = document.createElement("input");
+    bTitleInput.name = "book-title";
+    bTitleInput.id = "book-title";
+    
+    let authorLabel = document.createElement("label");
+    authorLabel.htmlFor = "author";
+    authorLabel.textContent = "Author";
+    let authorInput = document.createElement("input");
+    authorInput.name = "author";
+    authorInput.id = "author";
+
+    let bottomDiv = document.createElement("div");
+
+    let pagesLabel = document.createElement("label");
+    pagesLabel.htmlFor = "pages";
+    pagesLabel.textContent = "Pages";
+    let pagesInput = document.createElement("input");
+    pagesInput.type = "number";
+    pagesInput.name = "pages";
+    pagesInput.id = "pages";
+
+    let beenReadLabel = document.createElement("label");
+    beenReadLabel.htmlFor = "been-read";
+    beenReadLabel.textContent = "I have read this book";
+    let beenReadInput = document.createElement("input");
+    beenReadInput.type = "checkbox";
+    beenReadInput.name = "been-read";
+    beenReadInput.id = "been-read";
+
+    let submitButton = document.createElement("button");
+    submitButton.className = "submit-button";
+    submitButton.textContent = "Add book";
+
+    bottomDiv.appendChild(pagesLabel);
+    bottomDiv.appendChild(pagesInput);
+    bottomDiv.appendChild(beenReadLabel);
+    bottomDiv.appendChild(beenReadInput);
+
+    formElement.appendChild(bTitleLabel);
+    formElement.appendChild(bTitleInput);
+    formElement.appendChild(authorLabel);
+    formElement.appendChild(authorInput);
+    formElement.appendChild(bottomDiv);
+    formElement.appendChild(submitButton);
+
+    headerDiv.appendChild(formElement);
+});
