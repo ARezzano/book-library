@@ -1,8 +1,13 @@
 const myLibrary = [];
 
 const libraryBody = document.querySelector(".book-container");
-const newBookBtn = document.getElementById("new-book");
 const headerDiv = document.querySelector(".header-div");
+
+let newBookBtn = document.createElement("button"); //new book btn created and appended
+newBookBtn.className = "new-button";
+newBookBtn.textContent = "New book";
+
+headerDiv.appendChild(newBookBtn);
 
 function Book(title,author,pages,beenRead){
     this.title = title,
@@ -10,12 +15,7 @@ function Book(title,author,pages,beenRead){
     this.pages = pages,
     this.beenRead = beenRead
     this.id = crypto.randomUUID();
-    this.readMsg;
-    if(beenRead){
-        this.readMsg = " has been read already.";
-    }else{
-        this.readMsg = " hasn't been read yet.";
-    }
+    this.readMsg = beenRead ? " has been read already." : " hasn't been read yet.";
     this.message = `${this.title} was written by ${this.author}, has ${this.pages} pages and ${this.readMsg} This book's ID is ${this.id}`;
 };
 
@@ -28,6 +28,8 @@ function addBookToLibrary(title,author,pages,beenRead){
 function displayBooks(arr){
     arr = myLibrary;
 
+    libraryBody.innerHTML = "";
+
     for(let i = 0; i < myLibrary.length; i++){
        let cardElement = document.createElement("div");
        let cardText = document.createElement("p");
@@ -36,15 +38,13 @@ function displayBooks(arr){
 
        cardText.textContent = myLibrary[i].message;
        cardElement.appendChild(cardText);
-       return libraryBody.appendChild(cardElement);
+       libraryBody.appendChild(cardElement);
     }
 }
 
 newBookBtn.addEventListener("click", () =>{
-    let bookFormDiv = document.createElement("div");
-    bookFormDiv.className = "book-form";
-
     let formElement = document.createElement("form");
+    formElement.className = "book-form";
 
     let bTitleLabel = document.createElement("label");
     bTitleLabel.htmlFor = "book-title";
@@ -78,6 +78,8 @@ newBookBtn.addEventListener("click", () =>{
     beenReadInput.name = "been-read";
     beenReadInput.id = "been-read";
 
+    headerDiv.removeChild(newBookBtn);
+
     let submitButton = document.createElement("button");
     submitButton.className = "submit-button";
     submitButton.textContent = "Add book";
@@ -95,4 +97,13 @@ newBookBtn.addEventListener("click", () =>{
     formElement.appendChild(submitButton);
 
     headerDiv.appendChild(formElement);
+
+    submitButton.addEventListener("click",(event)=>{
+        event.preventDefault();
+
+        addBookToLibrary(bTitleInput.value, authorInput.value, pagesInput.value, beenReadInput.checked);
+        headerDiv.removeChild(formElement);
+        headerDiv.appendChild(newBookBtn);
+        displayBooks();
+    });
 });
