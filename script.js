@@ -59,6 +59,7 @@ newBookBtn.addEventListener("click", () =>{
     authorInput.id = "author";
 
     let bottomDiv = document.createElement("div");
+    bottomDiv.className = "bottom-div";
 
     let pagesLabel = document.createElement("label");
     pagesLabel.htmlFor = "pages";
@@ -70,7 +71,7 @@ newBookBtn.addEventListener("click", () =>{
 
     let beenReadLabel = document.createElement("label");
     beenReadLabel.htmlFor = "been-read";
-    beenReadLabel.textContent = "I have read this book";
+    beenReadLabel.textContent = "I read it";
     let beenReadInput = document.createElement("input");
     beenReadInput.type = "checkbox";
     beenReadInput.name = "been-read";
@@ -103,6 +104,7 @@ newBookBtn.addEventListener("click", () =>{
 
     cancelButton.addEventListener("click",(event)=>{
         event.preventDefault();
+        headerDiv.appendChild(newBookBtn);
         headerDiv.removeChild(formElement);
     });
 

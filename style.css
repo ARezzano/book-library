@@ -9,15 +9,58 @@ html{
 
 h1{
     justify-self: center;
+    padding: 30px;
 }
 
 .header-div{
     justify-self: center;
-    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .book-form form:first-of-type{
     display: grid;
+}
+
+.book-form{
+    padding: 40px;
+    background-color: rgb(241, 216, 178);
+    border-radius: 10px;
+}
+
+.book-form label{
+    margin-right: 5px;
+    font-size: 1.1rem;
+    color: rgb(59, 41, 13);
+}
+
+.book-form input{
+    align-self: center;
+    margin-right: 15px;
+    border-radius: 4px;
+    border-style: none;
+    background-color: rgb(255, 249, 240);
+}
+
+.book-form button{
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.bottom-div{
+    justify-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#pages{
+    width: 15%;
+    margin-right: 155px;
+}
+
+#been-read{
+    transform: scale(1.5);
 }
 
 .book-container{
