@@ -25,9 +25,7 @@ function addBookToLibrary(title,author,pages,beenRead){
     myLibrary.push(book);
 }
 
-function displayBooks(arr){
-    arr = myLibrary;
-
+function displayBooks(){
     libraryBody.innerHTML = "";
 
     for(let i = 0; i < myLibrary.length; i++){
@@ -84,6 +82,10 @@ newBookBtn.addEventListener("click", () =>{
     submitButton.className = "submit-button";
     submitButton.textContent = "Add book";
 
+    let cancelButton = document.createElement("button");
+    cancelButton.className = "cancel-button";
+    cancelButton.textContent = "Cancel";
+
     bottomDiv.appendChild(pagesLabel);
     bottomDiv.appendChild(pagesInput);
     bottomDiv.appendChild(beenReadLabel);
@@ -95,8 +97,14 @@ newBookBtn.addEventListener("click", () =>{
     formElement.appendChild(authorInput);
     formElement.appendChild(bottomDiv);
     formElement.appendChild(submitButton);
+    formElement.appendChild(cancelButton);
 
     headerDiv.appendChild(formElement);
+
+    cancelButton.addEventListener("click",(event)=>{
+        event.preventDefault();
+        headerDiv.removeChild(formElement);
+    });
 
     submitButton.addEventListener("click",(event)=>{
         event.preventDefault();

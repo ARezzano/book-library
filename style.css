@@ -3,12 +3,17 @@
     src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap') format("embedded-opentype");
 }
 
+html{
+    font-family: "roboto";
+}
+
 h1{
     justify-self: center;
 }
 
 .header-div{
     justify-self: center;
+    padding: 30px;
 }
 
 .book-form form:first-of-type{
