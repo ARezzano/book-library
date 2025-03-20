@@ -28,7 +28,7 @@ function addBookToLibrary(title,author,pages,beenRead){
 function displayBooks(){
     libraryBody.innerHTML = "";
 
-    for(let i = 0; i < myLibrary.length; i++){
+    for(let i = myLibrary.length-1; i >= 0; i--){
        let cardElement = document.createElement("div");
        let cardText = document.createElement("p");
 
