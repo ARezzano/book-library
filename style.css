@@ -1,15 +1,13 @@
-@font-face{
-    font-family: "roboto";
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap') format("embedded-opentype");
-}
-
 html{
-    font-family: "roboto";
+    font-family: "Roboto", sans-serif;
 }
 
 h1{
     justify-self: center;
     padding: 30px;
+    margin-bottom: 80px;
+    font-family: "Quintessential", serif;
+    font-size: 60px;
 }
 
 .header-div{
@@ -24,7 +22,7 @@ h1{
     border-style: none;
     background-color: rgb(255, 164, 45);
     padding: 15px;
-    font-weight: 600;
+    font-weight:600;
 }
 
 .book-form form:first-of-type{
@@ -90,7 +88,7 @@ h1{
 }
 
 .card{
-    padding: 20px;
+    padding: 50px;
     background-color: rgb(255, 233, 173);
     border-radius: 20px;
     font-family: "roboto";
